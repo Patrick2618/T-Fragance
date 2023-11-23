@@ -9,8 +9,8 @@
   --white:#fff;
 
   /* Fuentes */
-  --titulo: font-family: 'Titillium Web', sans-serif; ;
-  --titulo-secundario:font-family: 'Nanum Gothic', sans-serif;
+  --titulo: 'Titillium Web', sans-serif; ;
+  --titulo-secundario: 'Nanum Gothic', sans-serif;
   --text: 'Kanit', sans-serif;
 
 }
@@ -28,4 +28,15 @@
 }
 .text-scnd{
   font-family: var(--text);
+}
+.enlace{
+  color:black;
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+  margin-bottom: 0;
+}
+li{
+  display: inline-block;
 }

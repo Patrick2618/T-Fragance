@@ -1,7 +1,8 @@
 import React from 'react'
+import '../Estilos/Home.css'
 
 export const Home = () => {
   return (
-    <div>Home</div>
+    <div className='center'>Home</div>
   )
 }

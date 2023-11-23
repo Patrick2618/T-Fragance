@@ -2,5 +2,5 @@
 import { createContext } from "react";
 
 //Asi se crea un Context
-export const Context = createContext(null)
+export const Contexto = createContext(null)
 
