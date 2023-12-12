@@ -29,10 +29,7 @@
 .text-scnd{
   font-family: var(--text);
 }
-.enlace{
-  color:black;
-  text-decoration: none;
-}
+
 ul{
   list-style: none;
   margin-bottom: 0;

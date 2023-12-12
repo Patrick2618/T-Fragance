@@ -21,13 +21,16 @@
 .header-enlace{
     margin: 0 1rem;
     font-size: 1.2rem;
-    transition: all .3s ease;
+    text-decoration: none;
+    color: black;
+    transition: color .3s ease;
 }
 .header-enlace:hover{
-    font-weight: 600;
+    color:var(--terceario);
 }
 .active{
     font-weight: 600;
+    color: var(--secundario );
 }
 
 .search-container {

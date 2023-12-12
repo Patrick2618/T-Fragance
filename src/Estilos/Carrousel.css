@@ -1,0 +1,41 @@
+#carouselExampleIndicators {
+  height: 70vh;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  height: 70vh;
+}
+
+.img-carousel {
+  height: 70vh; 
+  width: 100%;
+  margin: auto;
+  display: block;
+  object-fit: cover; 
+  position: relative;
+}
+.imagen-carousel4{
+  object-position: 10% -8rem;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Color oscuro con opacidad */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overlay h2 {
+  color: #fff; /* Color del texto */
+  font-size: 2.5rem;
+  position: absolute;
+  bottom: 4rem; 
+}
+.carousel-indicators{
+  margin: 0;
+  bottom: 8rem;
+}

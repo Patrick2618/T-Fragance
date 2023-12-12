@@ -3,6 +3,7 @@ import '../Estilos/Header.css'
 import {NavLink} from 'react-router-dom'
 
 
+
 export const Header = () => {
   return (
     <div className='header'>
@@ -12,7 +13,7 @@ export const Header = () => {
       <section className='header-links'>
         <ul>
           <li>
-            <NavLink className='enlace titles header-enlace' 
+            <NavLink className='titles header-enlace' 
             activeClassName='active' to='/productos'
             >Productos</NavLink>
           </li>
