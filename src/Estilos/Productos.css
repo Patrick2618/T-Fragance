@@ -1,0 +1,128 @@
+.cont-productos{
+    overflow: hidden;
+}
+.productos-banner{
+    width: 100vw;
+    height: 40rem;
+    position: relative;
+    margin-bottom: 7rem;
+}
+.productos-banner img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.mascara {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white; 
+}
+input{
+    border: 0;
+}
+.mascara input:first-of-type{
+    display: block;
+    margin: 2rem 0 1.5rem;
+    padding: .3rem .7rem;
+    border-radius: 5px;
+}
+.mascara h2{
+    font-size: 2.4rem;
+    margin-top: 10rem;
+}
+.boton{
+    display: block;
+    background-color: var(--principal);
+    color: var(--white);
+    padding: .3rem .7rem;
+    border-radius: 2px;
+    margin-left: 9rem;
+}
+.boton2{
+    padding: .7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 2px;
+}
+
+.productos-principal{
+    width: 85vw;
+    min-height: 100vh;
+    margin: auto;
+    display: flex;
+    padding:3rem 0 50rem 0;
+}
+.productos-lateral{ 
+    width: 25%;
+}
+.productos-lateral h5{
+    transition: all 2s ease;
+    cursor: pointer;
+    margin-top: .8rem;
+}
+.producto-enlace{
+    display: block;
+    padding: .5rem 0;
+    max-width: 10rem;
+}
+.productos-division{
+    background-color: var(--principal);
+    height: 5px;
+    max-width: 15rem;
+    margin: 1rem 0;
+}
+.productos-precio{
+    max-width: 5rem;
+    margin: .5rem .3rem 2rem;
+}
+.cont-main-productos{
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.productos-card {
+    width: 21%;
+    min-width: 15rem;
+    height: 27rem;
+    margin: 0 1rem 2rem;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+  .productos-card:hover {
+    box-shadow: 0px 0px 25px -1px var(--otro);
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.card-img-productos{
+    width: 100%;
+    height: 15rem;
+    margin-bottom: 1rem;
+}
+.card-img-productos img{
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+.card-descripcion{
+    padding: .5rem 1rem;
+}
+.card-precio{
+    position: absolute;
+    left: 40%;
+    bottom: 0;
+}

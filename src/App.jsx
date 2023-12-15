@@ -22,6 +22,8 @@ function App() {
   ];
   const productos = [producto1, producto2, producto3, producto4]
 
+  const marcas = ['BURBERRY', 'PRADA', 'GUCCI', 'LACOSTE']
+
   // Array de títulos correspondientes a cada imagen
   const titulos = [
     "Cautiva con tu esencia.",
@@ -33,7 +35,7 @@ function App() {
   return (
     <>
       {/* Se utiliza el componente Provider del contexto para proveer las imágenes y títulos */}
-      <Contexto.Provider value={{ genericaImages, titulos, productos }}>
+      <Contexto.Provider value={{ genericaImages, titulos, productos, marcas }}>
         <MainRouter />
       </Contexto.Provider>
     </>
