@@ -109,11 +109,12 @@
   transition: all .5 ease;
   padding-bottom: 2rem;
   margin-bottom: 2rem;
-  transition: box-shadow .3s;
+  transition: box-shadow .3s, transform .3s;
 }
 .principales-card:hover{
   box-shadow: 0px 0px 25px -1px var(--otro);
   cursor: pointer;
+  transform: scale(1.05);
 }
 .principales-img img{
   width: 100%;

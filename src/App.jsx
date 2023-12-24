@@ -22,7 +22,12 @@ function App() {
   ];
   const productos = [producto1, producto2, producto3, producto4]
 
-  const marcas = ['BURBERRY', 'PRADA', 'GUCCI', 'LACOSTE']
+  const marcas = ['Elegance', 'Luxury Scents', 'Citrus Bliss', 
+  'Mystique', 'Sweet Essence', 'Aquatic Breeze', 'Fruit Fusion', 
+  'Aroma Bliss', 'Sultry Scent', 'Timeless Elegance']
+
+  const tipos = ['Citrico', 'Floral', 'Amaderado', 'Oriental', 'Aromatico'];
+
 
   // Array de títulos correspondientes a cada imagen
   const titulos = [
@@ -35,7 +40,7 @@ function App() {
   return (
     <>
       {/* Se utiliza el componente Provider del contexto para proveer las imágenes y títulos */}
-      <Contexto.Provider value={{ genericaImages, titulos, productos, marcas }}>
+      <Contexto.Provider value={{ tipos, genericaImages, titulos, productos, marcas }}>
         <MainRouter />
       </Contexto.Provider>
     </>
