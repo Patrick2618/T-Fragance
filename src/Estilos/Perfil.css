@@ -1,0 +1,92 @@
+.cont-perfil{
+    height: 60vh;
+    padding: 2rem 10%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+.perfil-nombre{
+    height: 100%;
+    max-width: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.perfil-nombre picture{
+    height: 20rem;
+    width: 20rem;
+    margin-bottom: 2rem;
+}
+.perfil-nombre img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.perfil-datos{
+    height: 100%;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    margin-left: 5rem;
+}
+.perfil-datos input, .perfil-datos select{
+    height: 3rem;
+    border-radius: 5px;
+    padding-left: 1rem;
+    border: 1px solid var(--principal);
+}
+.perfil-datos div{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+.perfil-datos div input{
+    width: 8rem;
+    padding-left: .8rem;
+}
+.perfil-datos select{
+    width: 8rem;
+}
+.perfil-actualizar{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 10rem;
+}
+.btn2{
+    margin: 0;
+    padding: .5rem .7rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+.btn3{
+    transition: background-color 0.5s ease;
+}
+.btn3:hover {
+    animation: cambioColores 3s infinite;
+}
+
+@keyframes cambioColores {
+    0%   { background-color: #48844a; }
+    25%  { background-color: #a58e4a; }
+    50%  { background-color: #324194; }
+    75%  { background-color: #671530; }
+    100% { background-color: #174b18; }
+}
+
+
+.perfil-botones{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    height: auto;
+}

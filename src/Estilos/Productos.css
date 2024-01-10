@@ -47,6 +47,10 @@ input{
     padding: .3rem .7rem;
     border-radius: 2px;
     margin-left: 9rem;
+    transition: background ease .3s;
+}
+.boton:hover{
+background-color: var(--secundario);
 }
 .boton2{
     padding: .7rem 1.5rem;
