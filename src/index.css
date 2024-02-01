@@ -29,7 +29,9 @@
 .text-scnd{
   font-family: var(--text);
 }
-
+body{
+  overflow-x: hidden;
+}
 ul{
   list-style: none;
   margin-bottom: 0;

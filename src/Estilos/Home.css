@@ -12,7 +12,7 @@
     flex-wrap: wrap;
     gap: 1.5rem;
     justify-content: center;
-    margin-bottom: 8rem;
+    margin-bottom: 10rem;
 }
 .home-mejores h2{
     width: 100%;
@@ -54,25 +54,31 @@
   .mejores-img:hover .mejores-img__titulo {
     opacity: 0.8;
   }
-  
+  .vvip img{
+    padding: .5rem;
+    object-fit:contain;
+  }
 
-  
+.home-titulo-fragancias{
+    text-align: center;
+}
 .home-evento{
     background-color: var(--principal);
-    border-radius: 20px;
+    width: 100vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
     align-items: center;
     padding: 2rem 0;
-    margin-bottom: 8rem;
+    margin: 5rem 0 15rem -12.5vw;
 }
 .img-evento{
+    position: relative;
     display: block;
     text-align: end;
     width: 40%;
     min-width: 27rem;
-    height: auto;
+    height: 15rem;
 }
 .img-evento img{
     width: 25rem;
@@ -93,13 +99,23 @@
     max-width: 45rem;
 }
 
+.home-mascara{
+  background-color: var(--principal);
+  position: absolute;
+  width: 100vw;
+  height: 30rem;
+  z-index: -1;
+  bottom: 0;
+}
 .home-principales{
+  position: relative;
   display: flex;
   flex-wrap: wrap;
+  color: white;
   width: 100%;
   justify-content: space-evenly;
   align-items: start;
-  margin: 7rem 0 5rem;
+  margin: 5rem 0 7rem;
 }
 .principales-card{
   width: 30%;
@@ -112,7 +128,6 @@
   transition: box-shadow .3s, transform .3s;
 }
 .principales-card:hover{
-  box-shadow: 0px 0px 25px -1px var(--otro);
   cursor: pointer;
   transform: scale(1.05);
 }

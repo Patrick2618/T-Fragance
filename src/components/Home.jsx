@@ -11,7 +11,9 @@ export const Home = () => {
     'Light Blue evoca la frescura de un día de verano italiano con su mezcla cítrica y afrutada. Notas de manzana, cedro y limón se entrelazan para crear una fragancia refrescante y vibrante, perfecta para un estilo de vida activo y lleno de energía.', 
     'Sensual y misterioso, Black Orchid de Tom Ford es una fragancia lujosa y cautivadora. Las notas ricas de orquídea negra, especias y chocolate negro se combinan para crear una experiencia olfativa intensa y seductora, perfecta para ocasiones especiales.', 
     ]
-  const {productos, marcas, genericaImages} = useContext(Contexto)
+  const {nombre, descripcion, image, marcasUnicas, genericaImages, marcaCompleta} = useContext(Contexto)
+
+  const soloVip = marcaCompleta.filter(marca => marca.vip == "true");
 
   return (
     <>
@@ -19,35 +21,41 @@ export const Home = () => {
 
     <section className='cont-home'>
 
-      <div className='home-mejores'>
-        <h2 className='titles'>LAS MEJORES MARCAS</h2>
-        {productos.map((producto, index) => (
-          <div className='mejores-img'>
-            <img src={producto} className="mejores-img__img" alt={`Producto ${index + 1}`} />
-            <div className="mejores-img__titulo">
-                <h2 className='titles'>{marcas[index]}</h2>
-              </div>
-          </div>
-        ))}
-      </div>
-      
-      <div className='home-evento'>
+    <div className='home-evento'>
           <div className='img-evento'>
-            <img src={productos[1]} />
+            <img src={image[14]} />
           </div>
           <div className='evento-texto'>
             <h3 className='titles'>¡Descubre la nueva fragancia! </h3>
-            <p>Esta exquisita combinación de notas florales y amaderadas ha sido cuidadosamente diseñada para llevar tu experiencia de fragancias a un nivel completamente nuevo.</p>
+            <p>
+              {/* Esta exquisita combinación de notas florales y amaderadas ha sido cuidadosamente diseñada para llevar tu experiencia de fragancias a un nivel completamente nuevo. */}
+              {descripcion[14]}  
+            </p>
           </div>
       </div>
 
+      <div className='home-mejores'>
+        <h2 className='titles'>LAS MEJORES MARCAS</h2>
+        {soloVip.map((marca, index) => (
+          <div className={`mejores-img vip ${marca.nombre === "Gucci Gang" ? 'vvip' : ''}`} key={index}>
+            <img src={marca.img} className="mejores-img__img" alt={`Producto ${index + 1}`} />
+            <div className="mejores-img__titulo">
+              <h2 className='titles'>{marca.nombre}</h2>
+            </div>
+          </div>
+        ))}
+      </div>
+
+
+      <h2 className='home-titulo-fragancias titles'>LAS FRAGANCIAS MAS SOLICITADAS</h2>
       <div className='home-principales'>
+        <div className='home-mascara'></div>
         {perfumes.map((perfume, index) => (
-          <section className='principales-card'>
+          <section className='principales-card' key={index}>
             <div className='principales-img'>
               <img src={genericaImages[index]} alt={`Perfume Mas vendido ${index + 1}`} />
             </div>
-            <h3>{marcas[index]}</h3>
+            <h3>{nombre[index]}</h3>
             <p>{perfume}</p>
           </section>
         ))}

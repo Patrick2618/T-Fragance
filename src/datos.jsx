@@ -1,6 +1,36 @@
 
 const perfumes = [
-    {
+  // {
+  //   nombre: "Gucci Gang",
+  //   titulo: "ElegaCautiva con tu esencia.nce",
+  //   img:'https://i.ibb.co/TqZ1q4J/gucci.webp',
+  //   vip:'true'
+  // },
+  // {
+  //   nombre: "Prada",
+  //   titulo: "Sé inolvidable, elige un aroma que hable por ti.",
+  //   img:'https://i.ibb.co/1Qg0Dfj/prada.webp',
+  //   vip:'true'
+  // },  
+  // {
+  //   nombre: "Versache",
+  //   titulo: "Descubre el arte de seducir con cada gota de perfume.",
+  //   img:'https://i.ibb.co/zNVrdn8/versache.webp',
+  //   vip:'true'
+  // },  
+  // {
+  //   nombre: "Tagline",
+  //   titulo: "El perfume es la firma invisible de quien realmente eres.",
+  //   img:'https://i.ibb.co/16WV4y9/tagline.webp',
+  //   vip:'true'
+  // },  
+  // {
+  //   nombre: "Piraton",
+  //   titulo: "Sooy piraton",
+  //   img:'https://i.ibb.co/Q8PmLY1/producto1.webp',
+  //   vip:'false'
+  // },    
+  {
       id: 1,
       nombre: "Perfume Floral",
       marca: "Elegance",

@@ -1,33 +1,38 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Contexto } from '../Context/Contexto';
-import perfumesData from '../datos';
+// import perfumesData from '../datos';
 import { NavLink } from 'react-router-dom';
 import '../Estilos/Productos.css';
-
+ 
 export const Productos = () => {
-  const { genericaImages, marcas, tipos } = useContext(Contexto);
+  const { genericaImages, perfume, marcasUnicas, tipoUnicas} = useContext(Contexto);
   const [filtrado, setFiltrado] = useState('');
+  const [cont, setCont] = useState('');
+  const [textoPrecio, setTextoPrecio] = useState('');
   const [perfumeFiltrado, setPerfumeFiltrado] = useState([]);
   const [filtradoVisible, setFiltradoVisible] = useState(true);
+  
 
 
   const filtrarPerfumes = (filtro) => {
     const filtroLowerCase = filtro.toLowerCase().trim();
 
     const perfumesFiltrados = filtroLowerCase
-      ? perfumesData.filter(perfume =>
+      ? perfume.filter(perfume =>
           (perfume.marca.toLowerCase().includes(filtroLowerCase) ||
           perfume.categoria.toLowerCase().includes(filtroLowerCase))
         )
-      : perfumesData;
+      : perfume;
   
     setPerfumeFiltrado(perfumesFiltrados);
   };
 
+
   useEffect(() => {
     filtrarPerfumes(filtrado);
     setFiltradoVisible(true)
-  }, [filtrado]);
+  }, [filtrado, perfume, cont]);
+
 
   const handleBuscar = (filtro) => {
     setFiltrado(filtro);
@@ -35,14 +40,21 @@ export const Productos = () => {
 
   const handleFiltrarPrecio = (e, min, max) => {
     e.preventDefault();
-    let s = 'Min: '+min+', Max: '+max
-    for(let i = 1; i==2; i++){
-      setFiltrado(s);
+    if(min !== '' && max !== '' && min !== 0 && max !== 0){
+      
+      let s = 'Min: '+min+', Max: '+max
+      setTextoPrecio(s)
+      
+      const preciosFiltrados = perfume.filter(perfume =>
+        perfume.precio >= min && perfume.precio <= max
+      );
+      setPerfumeFiltrado(preciosFiltrados)
+    }else{
+      let elementosPrecio = document.getElementsByClassName("productos-precio");
+      for (let i = 0; i < elementosPrecio.length; i++) {
+        elementosPrecio[i].style.border = '2px solid #5e2129';
+      }
     }
-    const preciosFiltrados = perfumesData.filter(perfume =>
-      perfume.precio >= min && perfume.precio <= max
-    );
-    setPerfumeFiltrado(preciosFiltrados)
 };
 
 
@@ -71,6 +83,20 @@ export const Productos = () => {
               setFiltradoVisible(false);
             }}>{filtrado}</p>
           }
+          {textoPrecio != '' &&
+            <p className={`productos-ya-filtrados ${filtradoVisible  ? 'faded-in' : ''}`}
+            onClick={e => {
+              e.preventDefault();
+              let elementosPrecio = document.getElementsByClassName("productos-precio");
+              for (let i = 0; i < elementosPrecio.length; i++) {
+                elementosPrecio[i].value = '';
+                elementosPrecio[i].style.border = '';
+              }
+              setCont(cont+1)
+              setFiltradoVisible(false);
+              setTextoPrecio('')
+            }}>{textoPrecio}</p>
+          }
 
           <h5
             data-bs-toggle="collapse"
@@ -81,7 +107,7 @@ export const Productos = () => {
             Marca
           </h5>
           <div className="collapse" id="collapseMarca">
-            {marcas.map((marca, index) => (
+            {marcasUnicas.map((marca, index) => (
               <NavLink
                 key={index}
                 onClick={() => handleBuscar(marca)}
@@ -104,7 +130,7 @@ export const Productos = () => {
             Tipos
           </h5>
           <div className="collapse" id="collapseTipos">
-            {tipos.map((tipo, index) => (
+            {tipoUnicas.map((tipo, index) => (
               <NavLink
                 key={index}
                 onClick={() => handleBuscar(tipo)}
